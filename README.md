@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/banner-dark.png">
+  <img alt="kabot: a website message box that delivers to Telegram and Bale, running on a single Cloudflare Worker" src="docs/assets/banner-light.png" width="100%">
+</picture>
+
 # kabot
 
 A self-hosted contact form that delivers your website's messages to Telegram or Bale. It runs entirely on one Cloudflare Worker, so your website's own server neither stores the messages nor talks to a messaging API.
