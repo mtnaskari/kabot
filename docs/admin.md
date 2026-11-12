@@ -9,20 +9,6 @@ export ADMIN_TOKEN=...   # the value you stored with `wrangler secret put ADMIN_
 
 The examples below use these two variables. The full endpoint list is in the [HTTP API reference](api.md#admin-endpoints).
 
-## Contents
-
-- [Add a site](#add-a-site)
-- [List and inspect sites](#list-and-inspect-sites)
-- [Change the allowed origins](#change-the-allowed-origins)
-- [Make the email field optional](#make-the-email-field-optional)
-- [Turn on Turnstile](#turn-on-turnstile)
-- [Link another chat](#link-another-chat)
-- [Rotate or revoke the API key](#rotate-or-revoke-the-api-key)
-- [Rename a site](#rename-a-site)
-- [Delete a site](#delete-a-site)
-- [Check the bots](#check-the-bots)
-- [Read messages in the database](#read-messages-in-the-database)
-
 ## Add a site
 
 ```bash
@@ -172,7 +158,10 @@ The new name appears in new notifications and in messages whose buttons are pres
 curl -X DELETE "$KABOT/admin/sites/shop" -H "Authorization: Bearer $ADMIN_TOKEN"
 ```
 
-This permanently deletes the site, all its messages, its linked chats and its pairing codes. Notifications already in chats stay there, but their buttons stop working. It cannot be undone.
+> [!CAUTION]
+> This permanently deletes the site, all its messages, its linked chats and its pairing codes. It cannot be undone.
+
+Notifications already in chats stay there, but their buttons stop working.
 
 ## Check the bots
 

@@ -2,18 +2,6 @@
 
 All requests and responses use JSON. All responses have an `ok` field.
 
-## Contents
-
-- [Errors](#errors)
-- [Public endpoints](#public-endpoints)
-  - [POST /v1/messages](#post-v1messages)
-  - [GET /v1/sites/:id/config](#get-v1sitesidconfig)
-  - [GET /widget.js](#get-widgetjs)
-  - [GET /health](#get-health)
-- [Admin endpoints](#admin-endpoints)
-- [Bot webhooks](#bot-webhooks)
-- [Objects](#objects)
-
 ## Errors
 
 Every error response has this shape:

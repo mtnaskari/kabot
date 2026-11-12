@@ -1,17 +1,5 @@
 # Configuration and operations
 
-## Contents
-
-- [Secrets](#secrets)
-- [Variables](#variables)
-- [Rate limits](#rate-limits)
-- [Scheduled maintenance](#scheduled-maintenance)
-- [Using your own domain](#using-your-own-domain)
-- [Updating kabot](#updating-kabot)
-- [Backups](#backups)
-- [Logs](#logs)
-- [Costs](#costs)
-
 ## Secrets
 
 Secrets are set with `npx wrangler secret put <NAME>` or in the Cloudflare dashboard under the Worker's **Settings → Variables and Secrets**. They are never visible after they are saved.
@@ -33,7 +21,10 @@ Several values are derived from it with HMAC-SHA-256:
 - the hash of each visitor's IP address;
 - the key that encrypts stored Turnstile secrets.
 
-Changing it has consequences. If you must change it:
+> [!WARNING]
+> Changing `KABOT_SECRET` changes the webhook URLs and makes stored Turnstile secrets unreadable.
+
+If you must change it:
 
 1. Set the new value with `npx wrangler secret put KABOT_SECRET`.
 2. Register the webhooks again with `POST /admin/webhooks`.

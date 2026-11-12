@@ -20,7 +20,8 @@ TELEGRAM_BOT_TOKEN=<a token for a separate test bot>
 BALE_BOT_TOKEN=
 ```
 
-Use a **separate test bot**, not the bot of a deployed kabot. The next section explains why.
+> [!IMPORTANT]
+> Use a separate test bot, not the bot of a deployed kabot. The next section explains why.
 
 ## Running the Worker
 

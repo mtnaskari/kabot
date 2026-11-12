@@ -9,23 +9,15 @@ You need:
 - A website you can add a `<script>` tag to, or a backend that can make an HTTPS request.
 - For the command-line steps, [Node.js](https://nodejs.org/) 18 or later and `curl`.
 
-## Contents
-
-1. [Create a Telegram bot](#1-create-a-telegram-bot)
-2. [Deploy the Worker](#2-deploy-the-worker)
-3. [Set the secrets](#3-set-the-secrets)
-4. [Connect the bot to the Worker](#4-connect-the-bot-to-the-worker)
-5. [Add your website](#5-add-your-website)
-6. [Link your chat](#6-link-your-chat)
-7. [Add the message box to your website](#7-add-the-message-box-to-your-website)
-8. [Send a test message](#8-send-a-test-message)
-
 ## 1. Create a Telegram bot
 
 1. In Telegram, open [@BotFather](https://t.me/BotFather) and send `/newbot`.
 2. Send a display name, for example `My Site Messages`.
 3. Send a username. It must end in `bot`, for example `mysite_messages_bot`.
-4. BotFather replies with a token like `7012345678:AAH…`. Keep it private: anyone with the token controls the bot.
+4. BotFather replies with a token like `7012345678:AAH…`.
+
+> [!IMPORTANT]
+> Keep the token private. Anyone who has it controls the bot.
 
 The bot only talks to chats you link with a pairing code, so it is safe for other people to find it. The [Telegram guide](telegram.md#optional-botfather-settings) lists optional settings such as a description and a profile picture.
 
@@ -176,4 +168,4 @@ If nothing arrives, see [Troubleshooting](troubleshooting.md).
 
 - [Turn on Turnstile](admin.md#turn-on-turnstile) to stop automated spam.
 - Add another site with a second `POST /admin/sites`. One deployment serves any number of sites.
-- Read the [security model](../README.md#security-model) to see what each protection covers.
+- Read the [security model](security.md) to see what each protection covers.

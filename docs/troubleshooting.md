@@ -1,17 +1,5 @@
 # Troubleshooting and FAQ
 
-## Contents
-
-- [Messages don't arrive in the chat](#messages-dont-arrive-in-the-chat)
-- [The widget doesn't appear](#the-widget-doesnt-appear)
-- [The form says the origin isn't allowed](#the-form-says-the-origin-isnt-allowed)
-- [The form says verification failed](#the-form-says-verification-failed)
-- [The bot does not answer](#the-bot-does-not-answer)
-- [The pairing code is invalid or has expired](#the-pairing-code-is-invalid-or-has-expired)
-- [Too many messages](#too-many-messages)
-- [The API key is refused](#the-api-key-is-refused)
-- [FAQ](#faq)
-
 ## Messages don't arrive in the chat
 
 First, check whether the message was stored and what happened to its notification:

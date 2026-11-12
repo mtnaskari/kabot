@@ -2,19 +2,6 @@
 
 This guide covers everything about the Telegram side of kabot: creating and configuring the bot, linking private chats and groups, using the bot, and maintaining it.
 
-## Contents
-
-- [How kabot uses Telegram](#how-kabot-uses-telegram)
-- [Creating the bot](#creating-the-bot)
-- [Optional BotFather settings](#optional-botfather-settings)
-- [Connecting the bot to kabot](#connecting-the-bot-to-kabot)
-- [Linking chats](#linking-chats)
-- [Using the bot](#using-the-bot)
-- [Unlinking a chat](#unlinking-a-chat)
-- [Changing the bot token](#changing-the-bot-token)
-- [Using a different Bot API server](#using-a-different-bot-api-server)
-- [Limitations](#limitations)
-
 ## How kabot uses Telegram
 
 kabot talks to the [Telegram Bot API](https://core.telegram.org/bots/api) in both directions, always from the Worker:
@@ -39,7 +26,8 @@ Store the token in the Worker:
 npx wrangler secret put TELEGRAM_BOT_TOKEN
 ```
 
-The token gives full control of the bot. Don't put it in a repository, a website or a chat message. If it leaks, [change it](#changing-the-bot-token).
+> [!IMPORTANT]
+> The token gives full control of the bot. Don't put it in a repository, a website or a chat message. If it leaks, [change it](#changing-the-bot-token).
 
 Use a separate bot for each kabot deployment. A bot can have only one webhook, so two deployments cannot share a bot.
 
@@ -136,7 +124,8 @@ Telegram asks which group to add the bot to, adds it, and sends the code to the 
 /start@example_inbox_bot k3m9q2wxp7…
 ```
 
-Everyone in a linked group can see the messages and press the buttons. Link a group only if all its members should have that access.
+> [!WARNING]
+> Everyone in a linked group can see the messages and press the buttons. Link a group only if all its members should have that access.
 
 If a group is upgraded to a supergroup, Telegram gives it a new chat id and deliveries to the old id fail. Create a new code and link the group again.
 

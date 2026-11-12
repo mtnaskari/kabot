@@ -6,17 +6,10 @@ Your backend can send messages with the site's API key instead of, or as well as
 - you want your own checks, such as a logged-in user or a CAPTCHA you already use;
 - you want the visitor's browser to talk only to your own domain.
 
-The API key replaces the origin check and Turnstile, so it must stay on the server. kabot refuses a key that arrives with an `Origin` header, which every browser sends, and browsers cannot send the `Authorization` header to the Worker at all.
+> [!IMPORTANT]
+> The API key replaces the origin check and Turnstile, so it must stay on the server.
 
-## Contents
-
-- [The API key](#the-api-key)
-- [kabot/client](#kabotclient)
-- [The message object](#the-message-object)
-- [Errors](#errors)
-- [Examples by platform](#examples-by-platform)
-- [Without the client](#without-the-client)
-- [From your own browser form](#from-your-own-browser-form)
+kabot refuses a key that arrives with an `Origin` header, which every browser sends, and browsers cannot send the `Authorization` header to the Worker at all.
 
 ## The API key
 

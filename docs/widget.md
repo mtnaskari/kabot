@@ -2,19 +2,6 @@
 
 `widget.js` adds a message box to any website with one script tag. It has no dependencies and works with any framework or none.
 
-## Contents
-
-- [Basic use](#basic-use)
-- [Floating button or inline form](#floating-button-or-inline-form)
-- [All attributes](#all-attributes)
-- [Translations and right-to-left languages](#translations-and-right-to-left-languages)
-- [Appearance](#appearance)
-- [Events](#events)
-- [Turnstile](#turnstile)
-- [Content Security Policy](#content-security-policy)
-- [Platform notes](#platform-notes)
-- [Accessibility](#accessibility)
-
 ## Basic use
 
 ```html

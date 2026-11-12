@@ -12,7 +12,7 @@ Only the latest release receives security fixes.
 
 ## Scope
 
-The security model is described in the [README](README.md#security-model). Reports are especially welcome about:
+The security model is described in [docs/security.md](docs/security.md). Reports are especially welcome about:
 
 - submitting messages to a site from an origin that is not allowed, or without passing Turnstile;
 - reading or changing messages from a chat that is not linked to their site;

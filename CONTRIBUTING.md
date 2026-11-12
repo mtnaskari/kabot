@@ -4,7 +4,7 @@ Thank you for considering a contribution. To report a vulnerability, follow [SEC
 
 ## Before you change anything
 
-- A change to the security model must update the [security model](README.md#security-model) section of the README in the same pull request.
+- A change to the security model must update the [security model](docs/security.md) in the same pull request.
 - A schema change is a new file in `migrations/`. Applied migrations are never edited.
 - A new runtime dependency needs a written reason. The Worker, the client and the widget have none today.
 
@@ -16,6 +16,10 @@ npm run check
 ```
 
 That runs the TypeScript compiler, the tests inside the Workers runtime, and the package build.
+
+## Documentation
+
+The guides live in `docs/` as Markdown, which reads well on GitHub. `npm run docs:build` turns them into the site in `_site/`, and a new page must be added to the navigation in `site/build.mjs`. The site is deployed to GitHub Pages from `main`.
 
 ## Commits
 
