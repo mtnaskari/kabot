@@ -14,7 +14,7 @@ New here? **[Get started](getting-started.md)**. It takes about fifteen minutes 
 
 - [The widget](widget.md): one script tag, floating or inline, in any language.
 - [React](react.md): a ready-made form and a hook.
-- [From a server](server.md): the API key and `kabot/client`, with examples for many platforms.
+- [From a server](server.md): the API key and `@mtnaskari/kabot/client`, with examples for many platforms.
 
 ## Run it
 

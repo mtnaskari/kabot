@@ -1,5 +1,5 @@
 /**
- * kabot/client: a dependency-free client for the kabot Worker.
+ * @mtnaskari/kabot/client: a dependency-free client for the kabot Worker.
  * Uses only fetch, so it runs in Node 18+, Cloudflare Workers, Deno, Bun and browsers.
  */
 

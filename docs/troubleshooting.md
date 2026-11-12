@@ -9,7 +9,7 @@ npx wrangler d1 execute DB --remote --command \
   "SELECT id, site_id, notified_at, notify_attempts, notify_error FROM messages ORDER BY id DESC LIMIT 5"
 ```
 
-- **No row.** The submission was refused. Look at the response in the browser's developer tools (Network tab, the `messages` request) or at the error from `kabot/client`, and see the sections below.
+- **No row.** The submission was refused. Look at the response in the browser's developer tools (Network tab, the `messages` request) or at the error from `@mtnaskari/kabot/client`, and see the sections below.
 - **`notify_error` is `No chat is paired with this site.`** Link a chat; see [Linking chats](telegram.md#linking-chats).
 - **`notify_error` mentions `bot token is not configured`.** The chat is on a platform without a token. Set `TELEGRAM_BOT_TOKEN` or `BALE_BOT_TOKEN`.
 - **`Forbidden: bot was blocked by the user`.** Unblock the bot in that chat.

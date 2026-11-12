@@ -1,5 +1,5 @@
 {
-  "name": "kabot",
+  "name": "@mtnaskari/kabot",
   "version": "0.1.0",
   "description": "Self-hosted contact form to Telegram and Bale, running entirely on one Cloudflare Worker.",
   "license": "Apache-2.0",
@@ -92,5 +92,8 @@
   },
   "bugs": {
     "url": "https://github.com/mtnaskari/kabot/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

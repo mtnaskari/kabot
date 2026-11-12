@@ -96,7 +96,7 @@ The widget renders inside a [Shadow DOM](https://developer.mozilla.org/docs/Web/
 
 The widget follows the visitor's light or dark system setting. It uses the system font.
 
-For complete control over the markup and styles, use the [React component](react.md), which is unstyled, or build your own form with [`kabot/client`](server.md#from-your-own-browser-form).
+For complete control over the markup and styles, use the [React component](react.md), which is unstyled, or build your own form with [`@mtnaskari/kabot/client`](server.md#from-your-own-browser-form).
 
 ## Events
 

@@ -90,7 +90,7 @@ The tests use [`@cloudflare/vitest-plugin`](https://developers.cloudflare.com/wo
 | `test/admin.test.ts` | Admin authentication, site validation, key storage, webhook registration |
 | `test/pairing.test.ts` | Webhook secrets, pairing codes, duplicate updates, Bale, unlinking |
 | `test/messages.test.ts` | Browser and server submissions, every protection, notifications, buttons, retries, retention |
-| `test/client.test.ts` | `kabot/client` against the Worker |
+| `test/client.test.ts` | `@mtnaskari/kabot/client` against the Worker |
 | `test/validate.test.ts` | Input and origin validation |
 | `test/entry.test.ts` | The Worker entry exports only its handler |
 
@@ -107,8 +107,8 @@ src/
   bot/webhook.ts    webhook verification, commands and buttons
   bot/format.ts     message formatting per platform
 public/widget.js    the embeddable widget, served as a static asset
-client/             kabot/client
-react/              kabot/react
+client/             @mtnaskari/kabot/client
+react/              @mtnaskari/kabot/react
 migrations/         D1 schema
 scripts/dev-poll.mjs
 ```

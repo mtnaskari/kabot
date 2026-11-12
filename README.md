@@ -6,7 +6,7 @@
 # kabot
 
 [![CI](https://github.com/mtnaskari/kabot/actions/workflows/ci.yml/badge.svg)](https://github.com/mtnaskari/kabot/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/kabot)](https://www.npmjs.com/package/kabot)
+[![npm](https://img.shields.io/npm/v/@mtnaskari/kabot)](https://www.npmjs.com/package/@mtnaskari/kabot)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 
 A message box for your website that delivers to Telegram and Bale. It runs on a single Cloudflare Worker, so your own server never stores messages or talks to a messaging API.
@@ -28,13 +28,26 @@ visitor ──► website ──► kabot Worker ──► Telegram / Bale ─�
 
 ## Features
 
-- **Three ways to send:** a one-line widget, a React component, or `kabot/client` with an API key from Node.js, Workers, Deno or Bun.
+- **Three ways to send:** a one-line widget, a React component, or `@mtnaskari/kabot/client` with an API key from Node.js, Workers, Deno or Bun.
 - **Spam protection:** Turnstile, a honeypot, per-IP rate limits, a daily cap and an allow list per site.
 - **Telegram and Bale**, separately or together, to private chats and groups.
 - **An inbox in the chat:** mark read, archive and list unread messages without leaving Telegram.
 - **One deployment, many sites**, each with its own origins, key and recipients.
 - **Nothing is lost:** messages are stored before delivery, and failed deliveries are retried.
 - **Private by design:** messages stay in your Cloudflare account and IP addresses are only kept as keyed hashes.
+
+## Packages
+
+The Worker is deployed from this repository. The client and the React component are on npm as [`@mtnaskari/kabot`](https://www.npmjs.com/package/@mtnaskari/kabot):
+
+```bash
+npm install @mtnaskari/kabot
+```
+
+```ts
+import { createKabotClient } from "@mtnaskari/kabot/client";
+import { KabotForm } from "@mtnaskari/kabot/react";
+```
 
 ## Quick start
 

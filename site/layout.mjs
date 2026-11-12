@@ -90,7 +90,7 @@ ${g.items
 function footer({ site }) {
   return `<footer class="site-footer">
   <p>kabot is open source under the <a href="${site.repo}/blob/main/LICENSE">Apache-2.0 license</a>. Copyright 2026 Matin Askari.</p>
-  <p><a href="${site.repo}">GitHub</a> · <a href="https://www.npmjs.com/package/kabot">npm</a> · <a href="${site.repo}/issues">Issues</a> · <a href="${site.repo}/blob/main/SECURITY.md">Security</a></p>
+  <p><a href="${site.repo}">GitHub</a> · <a href="https://www.npmjs.com/package/@mtnaskari/kabot">npm</a> · <a href="${site.repo}/issues">Issues</a> · <a href="${site.repo}/blob/main/SECURITY.md">Security</a></p>
 </footer>`;
 }
 

@@ -1,11 +1,11 @@
 # React
 
-`kabot/react` provides a ready-made form, `KabotForm`, and a hook, `useKabot`, for building your own. Both send messages from the visitor's browser, so the page's origin must be in the site's `allowedOrigins`. No API key is involved.
+`@mtnaskari/kabot/react` provides a ready-made form, `KabotForm`, and a hook, `useKabot`, for building your own. Both send messages from the visitor's browser, so the page's origin must be in the site's `allowedOrigins`. No API key is involved.
 
 ## Installation
 
 ```bash
-npm install kabot
+npm install @mtnaskari/kabot
 ```
 
 React 18 or later is required.
@@ -13,7 +13,7 @@ React 18 or later is required.
 ## KabotForm
 
 ```tsx
-import { KabotForm } from "kabot/react";
+import { KabotForm } from "@mtnaskari/kabot/react";
 
 export function Contact() {
   return (
@@ -90,7 +90,7 @@ Set `dir="rtl"` on a parent element for right-to-left languages.
 // app/contact/contact-form.tsx
 "use client";
 
-import { KabotForm } from "kabot/react";
+import { KabotForm } from "@mtnaskari/kabot/react";
 
 export function ContactForm() {
   return <KabotForm endpoint={process.env.NEXT_PUBLIC_KABOT_URL!} site="my-site" />;
@@ -118,7 +118,7 @@ If you would rather keep the Worker address off the page, submit to a [route han
 The hook sends messages and tracks their state. Use it to build a form with your own markup, validation and translations.
 
 ```tsx
-import { useKabot } from "kabot/react";
+import { useKabot } from "@mtnaskari/kabot/react";
 
 export function MiniForm() {
   const { send, status, error } = useKabot({ endpoint: "https://kabot.example.workers.dev", site: "my-site" });

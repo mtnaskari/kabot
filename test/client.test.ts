@@ -13,7 +13,7 @@ const workerFetch = (headers: Record<string, string> = {}): typeof fetch =>
     return call(url.pathname, { ...init, headers: { ...(init?.headers as Record<string, string>), ...headers } });
   }) as typeof fetch;
 
-describe("kabot/client", () => {
+describe("@mtnaskari/kabot/client", () => {
   it("requires exactly one of apiKey and site", () => {
     expect(() => createKabotClient({ endpoint: BASE })).toThrow(TypeError);
     expect(() => createKabotClient({ endpoint: BASE, apiKey: "kb_x", site: "x" })).toThrow(TypeError);

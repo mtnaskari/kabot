@@ -23,14 +23,14 @@ curl -X POST "$KABOT/admin/sites/my-site/api-key" -H "Authorization: Bearer $ADM
 
 The old key stops working at once. To disable server submissions entirely, revoke the key with `DELETE /admin/sites/my-site/api-key`.
 
-## kabot/client
+## @mtnaskari/kabot/client
 
 ```bash
-npm install kabot
+npm install @mtnaskari/kabot
 ```
 
 ```ts
-import { createKabotClient, KabotError } from "kabot/client";
+import { createKabotClient, KabotError } from "@mtnaskari/kabot/client";
 
 const kabot = createKabotClient({
   endpoint: "https://kabot.example.workers.dev",
@@ -129,7 +129,7 @@ A `201` response means the message is stored. Delivery to the chat happens after
 
 ```ts
 // app/api/contact/route.ts
-import { createKabotClient, KabotError } from "kabot/client";
+import { createKabotClient, KabotError } from "@mtnaskari/kabot/client";
 
 const kabot = createKabotClient({ endpoint: process.env.KABOT_URL!, apiKey: process.env.KABOT_API_KEY! });
 
@@ -159,7 +159,7 @@ Only pass fields you expect. Don't forward the whole request body, so a visitor 
 
 ```js
 import express from "express";
-import { createKabotClient, KabotError } from "kabot/client";
+import { createKabotClient, KabotError } from "@mtnaskari/kabot/client";
 
 const app = express();
 app.set("trust proxy", 1); // so req.ip is the visitor's address behind one proxy
@@ -181,7 +181,7 @@ app.post("/contact", async (req, res) => {
 ### Cloudflare Workers
 
 ```ts
-import { createKabotClient } from "kabot/client";
+import { createKabotClient } from "@mtnaskari/kabot/client";
 
 export default {
   async fetch(request: Request, env: { KABOT_URL: string; KABOT_API_KEY: string }) {
@@ -200,7 +200,7 @@ export default {
 ### Deno
 
 ```ts
-import { createKabotClient } from "npm:kabot/client";
+import { createKabotClient } from "npm:@mtnaskari/kabot/client";
 
 const kabot = createKabotClient({ endpoint: Deno.env.get("KABOT_URL")!, apiKey: Deno.env.get("KABOT_API_KEY")! });
 await kabot.send({ email: "sara@example.org", message: "Hello from Deno" });
@@ -209,7 +209,7 @@ await kabot.send({ email: "sara@example.org", message: "Hello from Deno" });
 ### Bun
 
 ```ts
-import { createKabotClient } from "kabot/client";
+import { createKabotClient } from "@mtnaskari/kabot/client";
 
 const kabot = createKabotClient({ endpoint: Bun.env.KABOT_URL!, apiKey: Bun.env.KABOT_API_KEY! });
 await kabot.send({ email: "sara@example.org", message: "Hello from Bun" });
@@ -293,7 +293,7 @@ To use your own HTML form in the browser without an API key, use browser mode. T
 </form>
 
 <script type="module">
-  import { createKabotClient } from "https://cdn.jsdelivr.net/npm/kabot@0.1.0/dist/client/index.js";
+  import { createKabotClient } from "https://cdn.jsdelivr.net/npm/@mtnaskari/kabot@0.1.0/dist/client/index.js";
 
   const kabot = createKabotClient({ endpoint: "https://kabot.example.workers.dev", site: "my-site" });
   const form = document.getElementById("contact");
