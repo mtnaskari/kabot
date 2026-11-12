@@ -1,0 +1,88 @@
+{
+  "name": "kabot",
+  "version": "0.1.0",
+  "description": "Self-hosted contact form to Telegram and Bale, running entirely on one Cloudflare Worker.",
+  "license": "Apache-2.0",
+  "author": "Matin Askari",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtnaskari/kabot.git"
+  },
+  "homepage": "https://github.com/mtnaskari/kabot#readme",
+  "keywords": [
+    "contact-form",
+    "telegram",
+    "bale",
+    "cloudflare-workers",
+    "d1",
+    "turnstile",
+    "bot"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    "./client": {
+      "types": "./dist/client/index.d.ts",
+      "default": "./dist/client/index.js"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "default": "./dist/react/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "wrangler d1 migrations apply DB --local && wrangler dev",
+    "dev:poll": "node scripts/dev-poll.mjs",
+    "deploy": "wrangler deploy && wrangler d1 migrations apply DB --remote",
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p .",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm test && npm run build",
+    "prepublishOnly": "npm run check"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-plugin": "^1.8.0",
+    "@cloudflare/workers-types": "^5.20261112.1",
+    "@types/react": "^19.3.0",
+    "@vitest/runner": "^4.1.12",
+    "@vitest/snapshot": "^4.1.12",
+    "react": "^19.3.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.12",
+    "wrangler": "^4.160.1"
+  },
+  "cloudflare": {
+    "bindings": {
+      "ADMIN_TOKEN": {
+        "description": "Bearer token for the /admin API. Use at least 32 random characters, for example from `openssl rand -hex 32`."
+      },
+      "KABOT_SECRET": {
+        "description": "Master secret for webhook URLs, IP hashing and Turnstile secret encryption. At least 32 random characters."
+      },
+      "TELEGRAM_BOT_TOKEN": {
+        "description": "Token from @BotFather. Leave empty to disable Telegram."
+      },
+      "BALE_BOT_TOKEN": {
+        "description": "Token from Bale's @BotFather. Leave empty to disable Bale."
+      }
+    }
+  }
+}

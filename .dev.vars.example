@@ -1,0 +1,8 @@
+# Bearer token for the /admin API. At least 32 characters: openssl rand -hex 32
+ADMIN_TOKEN=
+# Master secret for webhook URLs, IP hashing and Turnstile secret encryption. At least 32 characters.
+KABOT_SECRET=
+# From @BotFather. Leave empty to disable Telegram.
+TELEGRAM_BOT_TOKEN=
+# From @BotFather on Bale. Leave empty to disable Bale.
+BALE_BOT_TOKEN=

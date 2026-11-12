@@ -1,0 +1,37 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "kabot"
+main = "src/index.ts"
+compatibility_date = "2026-11-01"
+workers_dev = true
+
+# Serves widget.js. Paths that are not files fall through to the Worker.
+[assets]
+directory = "./public"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "kabot"
+migrations_dir = "migrations"
+
+# Browser submissions: 5 per visitor IP and site per minute.
+[[ratelimits]]
+name = "RATE_LIMITER"
+namespace_id = "7301"
+simple = { limit = 5, period = 60 }
+
+# API-key submissions that do not forward a visitor IP: 60 per site per minute.
+[[ratelimits]]
+name = "SERVER_RATE_LIMITER"
+namespace_id = "7302"
+simple = { limit = 60, period = 60 }
+
+# Retries failed notifications and applies RETENTION_DAYS.
+[triggers]
+crons = ["*/10 * * * *"]
+
+[vars]
+DAILY_LIMIT_PER_IP = "20"
+RETENTION_DAYS = "0"
+
+[observability]
+enabled = true
