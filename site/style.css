@@ -196,6 +196,7 @@ td code { white-space: nowrap; }
 .site-footer p { margin: 0 0 6px; }
 .site-footer a { color: var(--text-2); text-decoration: none; }
 .site-footer a:hover { color: var(--accent); }
+.site-footer .heart { display: inline-block; vertical-align: -2px; color: #e5363d; }
 
 /* Home */
 .home main { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
