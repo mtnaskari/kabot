@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
     paths: ["docs/**", "site/**", "public/favicon.*", "package.json", "package-lock.json", ".github/workflows/docs.yml"]
+  # Keep the published docs in step with every release.
+  release:
+    types: [published]
   workflow_dispatch:
 
 permissions:
